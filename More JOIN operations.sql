@@ -81,7 +81,7 @@ SELECT title, count(actorid) FROM movie
 
 -- 15. List all the people who have worked with 'Art Garfunkel'.
 SELECT distinct(name) FROM actor 
-    OIN casting ON (actorid=id)
+    JOIN casting ON (actorid=id)
     WHERE name != 'Art Garfunkel' and movieid IN(SELECT movieid FROM casting
     JOIN actor ON (actorid=id and name = 'Art Garfunkel'));
 
